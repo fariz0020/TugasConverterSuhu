@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Converter 4 Suhu</title>
+		<script type="text/javascript">
+			<!-- hello world ! -->
+			function convertCelcius() {
+				var textCelcius = parseFloat(document.getElementById('txtCelcius').value);
+				document.getElementById('txtReamur').value = textCelcius*(4/5);
+				document.getElementById('txtKelvin').value = textCelcius+273;
+				document.getElementById('txtFahrenheit').value = textCelcius*(9/5)+32;
+				document.getElementById('txtReamur').disabled=true;
+				document.getElementById('txtKelvin').disabled=true;
+				document.getElementById('txtFahrenheit').disabled=true;
+			}
+
+			function convertKelvin() {
+				var textKelvin = parseFloat(document.getElementById('txtKelvin').value);
+				document.getElementById('txtReamur').value = (textKelvin-273)*(4/5);
+				document.getElementById('txtCelcius').value = textKelvin-273;
+				document.getElementById('txtFahrenheit').value = (textKelvin-273)*(9/5)+32;
+				document.getElementById('txtReamur').disabled=true;
+				document.getElementById('txtCelcius').disabled=true;
+				document.getElementById('txtFahrenheit').disabled=true;
+			}
+
+			function convertFahrenheit() {
+				var textFahrenheit = parseFloat(document.getElementById('txtFahrenheit').value);
+				document.getElementById('txtReamur').value = ((textFahrenheit-32)*(5/9))*(4/5);
+				document.getElementById('txtCelcius').value = (textFahrenheit-32)*(5/9);
+				document.getElementById('txtKelvin').value = (textFahrenheit-32)*(5/9)-273;
+				document.getElementById('txtReamur').disabled=true;
+				document.getElementById('txtCelcius').disabled=true;
+				document.getElementById('txtKelvin').disabled=true;
+			}
+
+			function convertReamur() {
+				var textReamur = parseFloat(document.getElementById('txtReamur').value);
+				document.getElementById('txtFahrenheit').value = (textReamur*(5/4))*(9/5)+32;
+				document.getElementById('txtCelcius').value = textReamur*(5/4);
+				document.getElementById('txtKelvin').value = (textReamur*(5/4))-273;
+				document.getElementById('txtFahrenheit').disabled=true;
+				document.getElementById('txtCelcius').disabled=true;
+				document.getElementById('txtKelvin').disabled=true;
+			}
+
+			function resetButton() {
+				document.getElementById('txtReamur').value = "";
+				document.getElementById('txtFahrenheit').value = "";
+				document.getElementById('txtCelcius').value = "";
+				document.getElementById('txtKelvin').value = "";
+				document.getElementById('txtReamur').disabled=false;
+				document.getElementById('txtFahrenheit').disabled=false;
+				document.getElementById('txtCelcius').disabled=false;
+				document.getElementById('txtKelvin').disabled=false;
+			}
+
+		</script>
+		<style type="text/css">
+			h3 {
+				text-align: center;
+			}
+			h6 {
+				text-align: center;
+			}
+			h5 {
+				text-align: center;
+			}
+			p {
+				text-align: center;
+			}
+			table {
+				text-align: center;
+
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Simple Temperature Converter</h3>
+		<h6>By Fariz Nurzam </h6>
+		<h5>How to use ?</h5>
+		<p>Isi salah satu kolom text dengan angka kemudian tekan tombol yang ada dibawahnya</p>
+		<p>Klik tombol Reset, untuk mengkosongkan seluruh kolom text, agar dapat diisi kembali</p>
+		<br />
+		<table align="center">
+			<tr>
+				<th>Celcius</th>
+				<th></th>
+				<th>Kelvin</th>
+			</tr>
+			<tr>
+				<td><input type="text" name="textCelcius" id="txtCelcius" placeholder="Masukkan suhu Celcius"></td>
+				<td></td>
+				<td><input type="text" name="textKelvin" id="txtKelvin" placeholder="Masukkan suhu Kelvin" ></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="javascript:convertCelcius()" value="Hitung Celcius"/></td>
+				<td></td>
+				<td><input type="button" onclick="javascript:convertKelvin()" value="Hitung Kelvin"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" onclick="javascript:resetButton()" value="Reset"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Reamur</td>
+				<td></td>
+				<td>Fahrenheit</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="textReamur" id="txtReamur" placeholder="Masukkan suhu Reamur"></td>
+				<td></td>
+				<td><input type="text" name="textFahrenheit" id="txtFahrenheit" placeholder="Masukkan suhu Fahrenheit" ></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="javascript:convertReamur()" value="Hitung Reamur"/></td>
+				<td></td>
+				<td><input type="button" onclick="javascript:convertFahrenheit()" value="Hitung Fahrenheit"/></td>
+			</tr>
+		</table>
+	
+	</body>
+</html>
